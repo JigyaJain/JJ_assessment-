@@ -1,0 +1,53 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const holdNFT = [];
+
+function mintNFT (name, age, token, email, eyeColor) {                                     //here token is a unique 5-digit number
+    objectNFT = { "Name" : name, "Age" : age, "Token" : token, "Email" : email, "Eye_Color" : eyeColor };
+    holdNFT.push(objectNFT);
+}
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+
+function listNFTs () {
+    let i=0;
+    while(i < holdNFT.length)
+        {
+            console.log("\nNFT => " + (i+1) + "\n");
+            console.log("Name      : " +holdNFT[i].Name);
+            console.log("Age       : " +holdNFT[i].Age);
+            console.log("Token     : " +holdNFT[i].Token);
+            console.log("Email     : " +holdNFT[i].Email);
+            console.log("Eye_Color : " +holdNFT[i].Eye_Color);
+            i++;
+        }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    let totalNFT = holdNFT.length;                         
+    return totalNFT;                                                   //returning the number of NFT's created
+}
+
+// call your functions below this line
+
+mintNFT( "Jigya", 19, 12345, "jigyajain17@gmail.com", "black");
+mintNFT( "Jack", 21, 85420, "jack39@gmail.com", "brown");
+mintNFT( "Joe", 26, 13795, "joe@gmail.com", "hazel");
+listNFTs();
+
+let totalNFT = getTotalSupply();
+console.log("\nThe total supply of NFT is/are = " + totalNFT);
